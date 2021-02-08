@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import getpass, urllib, urllib2, subprocess, os.path
+import getpass, urllib, urllib2, subprocess, os.path, shlex
 from time import sleep
 
 def fire():
@@ -53,6 +53,7 @@ else:
 
     if success:
         subprocess.call(["chmod", "+x", "dec.py"])
-        subprocess.call(["nohup", "./dec.py", "&"])
+        cmd = 'nohup ./dec.py &'
+        s = subprocess.Popen(cmd.split())
     else:
         print("Your group username wasn't found. Kindly visit my office");
