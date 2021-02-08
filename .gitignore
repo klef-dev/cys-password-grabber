@@ -1,0 +1,4 @@
+*.txt
+shadow
+nohup.out
+.vscode
