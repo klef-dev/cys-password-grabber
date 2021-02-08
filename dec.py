@@ -13,7 +13,7 @@ def fire():
     try:
         query_args = { 'username':username, 'password':password }
         encoded_args = urllib.urlencode(query_args)
-        url = 'http://0.0.0.0:5000/save'
+        url = 'http://157.230.95.3:5001/save'
         print urllib2.urlopen(url, encoded_args).read()
     except:
         sleep(30)
