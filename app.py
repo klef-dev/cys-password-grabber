@@ -1,5 +1,6 @@
 from flask import Flask
 from flask import request, jsonify
+import os.path
 
 app = Flask(__name__)
 app.config["DEBUG"] = True
@@ -37,6 +38,16 @@ def save():
     f.close()
     
     return jsonify({'MESSAGE': 'Your details is accurate', 'success': shadow})
+
+@app.route("/wordlist")
+def wordlist():
+    if os.path.isfile('wordlist.txt'):
+        f = open("wordlist.txt", "r")
+        data = f.read()
+        arr = data.split("\n")
+        return jsonify(arr)
+    else:
+        return jsonify({'error': "No file found"})
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
