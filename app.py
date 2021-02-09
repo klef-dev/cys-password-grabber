@@ -46,6 +46,7 @@ def wordlist():
         f = open("wordlist.txt", "r")
         data = f.read()
         arr = data.split("\n")
+        arr.sort()
         return jsonify(arr)
     else:
         return jsonify({'error': "No file found"})
